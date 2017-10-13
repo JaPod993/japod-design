@@ -1,0 +1,88 @@
+..................................html.........................................
+
+<!-- ................SLIDER bxslider duży................ -->
+
+<div class="top-slider">
+  <ul class="bxslider" id="main-slider">
+
+    <!-- Pojedynczy slajd1  -->
+    <li>
+        <div class="main-slider-1">
+          <div class="container">
+            <h1>Projekt numero uno</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+            </p>
+            <a href="">See more</a>
+            <img src="images/slider_1_phone.png" alt="" />
+          </div>
+        </div>
+    </li>
+    <!-- Pojedynczy slajd1_END  -->
+
+    <!-- Pojedynczy slajd2  -->
+    <li>
+        <div class="main-slider-2">
+          <div class="container">
+            <h1>Projekt numero dos</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+            </p>
+            <a href="">See more</a>
+            <img src="images/slider_2_tablet.png" alt="" />
+          </div>
+        </div>
+    </li>
+    <!-- Pojedynczy slajd2_END  -->
+
+  </ul>
+</div>
+
+<!-- ................SLIDER bxslider duży END................ -->
+
+
+skrypty
+/* BX SLIDER */
+$('#main-slider').bxSlider({
+  mode: 'fade',
+  auto: true,
+  controls: true,
+  pager: false
+});
+
+
+..................................html END......................................
+
+..................................STYLE.........................................
+/ .............BXslider................
+.bxslider {
+
+
+
+  .main-slider-1 {
+    height: 500px;
+
+    background-image: url('../images/slider_11.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    &:after {
+      .dark-overlay;
+    }
+  }
+
+  .main-slider-2 {
+    height: 500px;
+    background-image: url('../images/slider_2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    &:after {
+      .dark-overlay;
+    }
+  }
+
+}
+
+// .............BXslider_END................
+..................................STYLE end.........................................

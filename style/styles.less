@@ -1,0 +1,652 @@
+ // STYLE
+
+
+
+//........... Siatka kolumn .............
+@columns: 12;
+@column-width: 65;
+@gutter-width: 30;
+@total-width: 100%;
+@items: 4;
+
+//kolumny
+.me-team .single-col {
+	.column(12);
+	@media @tablet {
+		.column(12);
+	}
+}
+
+.our-services .single-col {
+  .column(12);
+  @media @tablet {
+    .column(4);
+  }
+}
+
+.our-team .single-col {
+	.column(12);
+	@media @tablet {
+		.column(6);
+	}
+}
+
+.footer-main .single-col {
+	.column(12);
+	@media @phone {
+		.column(6);
+	}
+	@media @tablet {
+		.column(3);
+	}
+}
+
+
+// KONTENER wyśrodkowania
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  clear: both;
+  padding: 0 15px;
+}
+
+//Inne elementy
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+//tytuły sekcji
+.section-title {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  .center-text;
+}
+
+//naglowki
+h1, h2, h3 {
+  line-height: 1.1;
+}
+
+// mixin przyciski
+.basic-button(@color;@background-color) {
+  color: @color;
+  background-color: @background-color;
+  text-decoration: none;
+  .inline-block;
+  font-size: @basic-font-size;
+  font-weight: 400;
+  line-height: @basic-line-height;
+  text-transform: uppercase; //WIELKIE LITERY W KAZDYM PRZYCISKU
+}
+//glowny kontener PADDING TOP
+#main-container {
+  padding-top: 60px;
+}
+
+/*............................ MENU ................................. */
+.anchor {
+  display: block;
+    height: 63px; /*same height as header*/
+    margin-top: -63px; /*same height as header*/
+    visibility: hidden;
+}
+header {
+  z-index: 1000;
+  position: fixed; // przyczezpiony
+  top: 0; // przyczep gora
+  left: 0;
+  right: 0;
+  background: @basic-background; // KOLOR PASKA MENU !!!!!!!
+  border-bottom: 1px solid @basic-border-color;
+  box-shadow: 0 0 1px @basic-border-color;  // x,y przesuniecie w pionie poziomie, z- rozmycie i- kolor
+  .navbar {
+      height: 63px; // WIELKOSC PASKA MENU !!!!!!!!
+          .nav-logo {
+            .float-left;
+            .center-vertical;
+            z-index: 2;
+          }
+    }
+}
+//ukrywanie menu glownego
+#main-menu {
+  .invisible;
+  @media @phone {
+    .block;
+  }
+}
+
+//menu
+.main-menu-content{
+  .float-right;
+  .center-vertical;
+    ul {
+      .list-style-none;
+      li {
+        .float-left;
+        .block;
+        a {
+          color: @menu-link-color;
+          font-size: 15px;
+          //Kolor,rozmiar,czcionka MENU
+          font-family: @font-family-secondary;
+          font-weight: 400;
+          padding: 20px 14px;
+          line-height: 20px;
+          .basic-transition;
+          &:hover {
+            color: @accent-color;
+          }
+          @media @tablet {
+            padding: 20px 22px
+          }
+        }
+        i{
+          font-size: 14px;
+          // DO USUNIECIA LUPA LUPA LUPA LUPA
+        }
+      }
+    }
+}
+
+//menu mobilne
+.slicknav_menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  @media @phone {
+    .invisible;
+  }
+  i {
+    .invisible;
+  }
+  ul {
+    .section-border-bottom;
+    box-shadow: 0 0 1px @basic-border-color;
+  }
+}
+
+/*............................ MENU ................................. */
+
+
+// .......... ....PARALLAX ....................
+
+.photo-banner {
+  .center-text;
+  background: url('../images/contact1.jpg') fixed 60% 0;
+  .photo-banner-inner {
+    position: relative;
+    z-index: 0;
+    &:after {
+    //.dark-overlay;
+  //   .dark-less-overlay;
+
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 100px 0;
+    }
+    h2 {
+    // .section-border-top;
+      padding: 10px;
+      .header-mixin(28px;5px;@brightest-text-color);
+      text-shadow: -1px 1px 2px @footer-copyright-background;
+    //  font-family: @font-family-secondary;
+      @media @tablet {
+  			font-size: 40px;
+  			line-height: 42px;
+  		}
+    }
+
+    h3 {
+
+      //padding: 0px 220px 20px 220px;
+      margin: 0 0 30px;
+     font-size: 80px;
+     line-height: 90px;
+     color: @brightest-text-color;
+      font-family: @font-family-secondary;
+    //  letter-spacing: 8px;
+  // .section-border-bottom;
+    text-shadow: -1px 1px 2px @footer-copyright-background;
+    @media @tablet {
+			font-size: 105px;
+			line-height: 100px;
+
+    }
+
+
+   }
+     p {
+     i {
+
+       font-size: 48px;
+       color: @bright-text-color;
+        margin: 0 0 0 0;
+     }
+   }
+  }
+
+}
+
+// .......... ....PARALLAX_END ................
+
+
+
+// zobacz wiecej ikonki
+.our-services {
+  padding: 80px 0 60px;
+  .overflow-fix;
+	h2 {
+
+			font-size: 35px;
+			color: @footer-copyright-background;
+			padding-bottom: 10px;
+			.section-border-bottom;
+	}
+  .single-col {
+		margin-top: 10px;
+    margin-bottom: 30px;
+    .center-text;
+    span {
+      a {
+      .inline-block;
+      .size(90px;90px);
+      background: @accent-color;
+      .center-text;
+      .border-radius-single(50%);
+      margin-bottom: 30px;
+      .basic-transition;
+      &:hover {
+        background: @alternate-background;
+        cursor: pointer;
+        cursor: hand;
+      }
+      &:hover > i {
+        color: @accent-color;
+      }
+      i {
+        color: @brightest-text-color;
+        font-size: 35px;
+        line-height: 90px;
+      }
+    }
+    }
+    @media @tablet {
+      margin-bottom: 0;
+    }
+  }
+	.section-border-bottom;
+}
+
+//...................PORTOFLIO SLIDER_1....................
+
+
+// Portfolio
+.portfolio {
+
+	padding: 0px 0;
+//	.section-border-top;
+	.owl-controls {
+		margin-top: 10px;
+	}
+}
+
+.portfolio-item {
+	width: 100%;
+
+	img {
+    padding: 0 10px 0 10px;
+		width: 100%;
+		cursor: move;
+	}
+	&:hover .portfolio-hover {
+		opacity: 1;
+	}
+	&:hover h3 {
+		.translate3d(0%;0%;0%);
+	}
+	&:hover p {
+		.translate3d(0%;0%;0%);
+	}
+	&:hover a {
+		.translate3d(0%;0%;0%);
+	}
+
+}
+
+.portfolio-hover {
+	//.absolute-one-hundred-size;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  //padding: 0 -10px 0 -10px;
+  //width: 100%;
+	.center-text;
+	.basic-transition;
+	overflow: hidden;
+//	background-color: fade(@accent-color,85%);
+  background-color: fade(@accent-color,90%);
+	opacity: 0;
+}
+
+.portfolio-hover-inner {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%);
+	h3 {
+		.header-mixin(18px;6px;@basic-background);
+		.translate3d(0%;-400%;0%);
+		.variable-transition(0.6s);
+	}
+	p {
+		color: @basic-background;
+		margin-bottom: 20px;
+		.translate3d(0%;-400%;0%);
+		.variable-transition(0.6s);
+
+	}
+	a {
+		.inline-block;
+		.size(40px;40px);
+		.border-radius-single(50%);
+		border: 1px solid @basic-background;
+		.center-text;
+		margin: 0 5px;
+		.translate3d(0%;400%;0%);
+		.basic-transition;
+		i {
+			line-height: 40px;
+			font-size: 14px;
+			color: @basic-background;
+			.basic-transition;
+		}
+		&:hover {
+			background-color: @basic-background;
+		}
+		&:hover i {
+			color: @accent-color;
+		}
+
+	}
+	a.portfolio-link-left {
+		.variable-transition(0.4s);
+	}
+	a.portfolio-link-right {
+		.variable-transition(0.6s);
+	}
+}
+//...................PORTOFLIO SLIDER_1_END....................
+
+// Pasek pod wideo kontakt
+.section-video-text {
+	.section-border-bottom;
+  background-color: @alternate-background;
+  padding: 40px 0;
+  .center-text;
+  h2 {
+    //color: @accent-color;
+ color: @footer-copyright-background;
+//  color: darken(@accent-color, 18%);
+    //margin-bottom: 0;
+    font-size: 35px;
+    font-family: @font-family-secondary;
+    font-weight: 900;
+  }
+
+}
+
+
+
+
+
+
+
+// about me, nasz zespol
+.me-team {
+
+//background-image: url('../images/contact5.jpg');
+//background-repeat: no-repeat;
+//background-position: center top;
+
+  padding: 25px 0 10px;
+  .center-text;
+  .section-border-top;
+  .section-border-bottom;
+  .overflow-fix;
+  .single-col {
+    margin-bottom: 30px;
+  }
+}
+
+.me-members {
+  .overflow-fix;
+  margin-bottom: 40px;
+}
+
+.me-member {
+
+  .center-text;
+
+  h3 {
+    .header-mixin(38px;0px);
+    font-weight: 900;
+    padding: 30px 0px 0px 0px;
+    color: @footer-copyright-background;
+    margin-bottom: 30px;
+  }
+  h2{
+    .header-mixin(38px;20px);
+    padding: -30px 0px 0px 0px;
+    color: @footer-copyright-background;
+    //margin-bottom: 0px;
+  }
+  span {
+  //  .section-border-top;
+    font-size: 28px;
+    color: @basic-header-color;
+    font-family: @font-family-secondary;
+    line-height: 40px;
+    margin:  0 0 10px;
+    .inline-block;
+    //padding: 0px 60px 10px 60px;
+    //.section-border-bottom;
+    a{
+      font-weight: 700;
+      color: @accent-color;
+      cursor: default;
+    }
+    @media @phone {
+      padding: 0px 60px 10px 60px;
+    }
+
+  }
+  p {
+    font-family: @font-family-secondary;
+    font-size: 26px;
+    color: @basic-header-color;
+    margin-bottom: 20px;
+    //padding: 0px 170px 0px 170px;
+    a{
+      color: @accent-color;
+      font-weight: 550;
+    }
+    @media @phone {
+      padding: 0px 170px 0px 170px;
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+// about me, nasz zespol
+.our-team {
+
+  padding: 25px 0 10px;
+  .center-text;
+//  .section-border-top;
+//  .section-border-bottom;
+  .overflow-fix;
+  .single-col {
+    margin-bottom: 30px;
+  }
+}
+
+.team-members {
+  .overflow-fix;
+  margin-bottom: 40px;
+}
+
+.team-member {
+
+  .center-text;
+  img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    //width: 100%;
+  }
+  h3 {
+    .header-mixin(38px;0px);
+    font-weight: 900;
+    padding: 30px 0px 0px 0px;
+    color: @footer-copyright-background;
+    margin-bottom: 30px;
+  }
+  h2{
+    .header-mixin(38px;20px);
+    padding: -30px 0px 0px 0px;
+    color: @footer-copyright-background;
+    //margin-bottom: 0px;
+  }
+  span {
+  //  .section-border-top;
+    font-size: 28px;
+    color: @basic-header-color;
+    font-family: @font-family-secondary;
+    line-height: 40px;
+    margin:  0 0 10px;
+    .inline-block;
+    //padding: 0px 60px 10px 60px;
+    //.section-border-bottom;
+    a{
+      font-weight: 700;
+      color: @accent-color;
+      cursor: default;
+    }
+    @media @phone {
+      padding: 0px 60px 10px 60px;
+    }
+
+  }
+  p {
+    font-family: @font-family-secondary;
+    font-size: 26px;
+    color: @basic-header-color;
+    margin-bottom: 20px;
+    //padding: 0px 170px 0px 170px;
+    a{
+      color: @accent-color;
+      font-weight: 550;
+    }
+    @media @phone {
+      padding: 0px 170px 0px 170px;
+    }
+
+  }
+}
+
+
+.members-social {
+  .list-style-none;
+   padding: 0px 0px 0px 20px;
+  li {
+    .inline-block;
+  //  padding: 0px 0px 0px 50px;
+   margin-right: 15px;
+   a {
+       .inline-block;
+       .size (50px; 50px);
+       background: @alternate-background;
+       border: 1px solid @accent-color;
+       .border-radius-single(50%);
+       .center-text;
+       text-decoration: none;
+       .basic-transition;
+       &:hover {
+         background-color: @footer-social-borders;
+        // background-color: @accent-color;
+         cursor: pointer;
+         cursor: hand;
+       }
+       &:hover > i {
+         color: @brightest-text-color;
+       }
+    i {
+      font-size: 18px;
+      color: @accent-color;
+      line-height: 48px;
+      .basic-transition;
+
+    }
+  }
+  }
+}
+
+
+
+
+
+.section-video-social {
+  background-color: @accent-color;
+  padding: 20px 0;
+  .center-text;
+  h2 {
+    color: @brightest-text-color;
+    //color: @footer-copyright-background;
+    margin-bottom: 25;
+    font-size: 28px;
+    font-family: @font-family-secondary;
+    //font-weight: 400;
+  }
+  span {
+
+  }
+}
+
+
+//stopka
+.copyright {
+  padding: 10px 0;
+  background-color: @footer-copyright-background;
+  border-top: 1px solid @footer-social-borders;
+  p {
+    font-size: 12px;
+    color: @basic-text-color;
+    margin: 0;
+    a {
+      color: @accent-color;
+    }
+  }
+}
